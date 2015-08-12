@@ -116,7 +116,8 @@ namespace CardGames.GameLogic
 			//TODO: implement update to automatically slip cards! - COMPLETE
 			if (_gameTimer.Ticks > _flipTime)
 			{
-				
+				_gameTimer.Reset();
+				FlipNextCard();
 			}
 
 		}
@@ -150,6 +151,7 @@ namespace CardGames.GameLogic
 
 			// stop the game...
 			_started = false;
+			_gameTimer.Stop();
 		}
 	
 		#region Snap Game Unit Tests
